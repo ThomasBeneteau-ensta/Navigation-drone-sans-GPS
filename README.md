@@ -25,8 +25,8 @@ Il utilise :
 
 ## 🎨 Fonctionnalités principales
 
-✅ **create_satellite_map.py** – <br>
-Permet de selectionner une zone géographique carrée et de créer une image satellite ainsi qu'une carte vectorielle de cette zone pour simulation. ces dernières serviront pour simuler les prise de vus par le drone en vol. 
+✅ **function.py** 
+
 
 
 ## 🗺️ Estimation de position : État de l'art
@@ -74,6 +74,7 @@ Une adaptation plus simple de la méthode de type SLAM avec un algorithme de Map
 
 Après réfléxion, voici un pseudo-code de l'algorithme de map matching que je souhaite réalisé : 
 
+```python
 def map_matching(observations, map_objects, position_prev, search_radius):
     best_position = None
     best_score = float('inf')
@@ -105,5 +106,5 @@ def map_matching(observations, map_objects, position_prev, search_radius):
             best_position = position
 
     return best_position
-
+```
 
