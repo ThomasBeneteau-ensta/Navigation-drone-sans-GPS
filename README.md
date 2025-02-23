@@ -108,3 +108,13 @@ def map_matching(observations, map_objects, position_prev, search_radius):
     return best_position
 ```
 
+AJOUTER EXPLICATION sur la façon dont on calcul la position 
+
+Partie mise en place de tout ça, 
+
+générer une carte vectorielle (depuis Openstreetmap) 
+Créer une carte vectorielle avec shapely
+
+calcul de distance et angles aux objets et modification du geodataframe
+
+partie estimation de position avec filtre de kalman
