@@ -145,7 +145,7 @@ C'est là qu'intervient OSMnx, c'est une bibliothèque Python permettant de tél
 
 La fonction ci-dessus permet de télécharger une carte vectorielle avec les objets souhaités, autour d'un point de coordonnée donné (lat, lon), dans un carrée de coté (dist): 
 
-'''python
+```python
 def gen_vect_map(lat, lon, dist):
     """
     Génère les données vectorielles OSM pour une zone autour d'un point central.
@@ -192,7 +192,8 @@ def gen_vect_map(lat, lon, dist):
     gdf['object_type'] = gdf.apply(get_object_type, axis=1)
 
     return gdf, (north, south, east, west)
-'''
+```
+
 générer une carte vectorielle (depuis Openstreetmap) 
 Créer une carte vectorielle avec shapely
 
