@@ -70,7 +70,7 @@ Le SLAM est une méthode permettant de se localiser tout en construisant simulta
 
 ## 🗺️ Estimation de position : Solution retenue
 
-Une adaptation plus simple de la méthode de type SLAM avec un algorithme de Map Matching m'ont parues être une bonne solution dans un premier temps.
+Un algorithme de Map Matching m'a semblé être une bonne solution dans un premier temps. En effet le fait de reconstruire une carte au fur et à mesure dans le cas du SLAM ne me parait pas nécessaire étant donné que l'on possède déjà une carte connue en mémoire. Quand à aux méthodes de triangulation et trilatération, elles ne me semblent pas réalisable dans notre cas puisqu'on aurait besoin d'identifier des points précis (bâtiments spécifique, point de repère, etc), et notre détection d'image ne nous permettra probablement pas d'identifier des bâtiments spécifiques. (On aura probablement seulement des labels "batiments", "route", "rivière", etc.)
 
 Après réfléxion, voici un pseudo-code de l'algorithme de map matching que je souhaite réalisé : 
 
@@ -107,6 +107,30 @@ def map_matching(observations, map_objects, position_prev, search_radius):
 
     return best_position
 ```
+
+Ce que l'on veut réaliser avec cet algorithme : 
+
+**- Génération de positions candidates** : Autour de la position précédente ou dans une zone de recherche définie. Typiquement on peut imaginer un filtre de kalman nous permettant de calculer une ellipse autour du point précédent, représentant les différentes positions possible pour notre point mobile. Dans cette ellipse on pourra alors choisir des points (les plus probables dans un premier temps) pour les comparer à notre point actuel (mais inconnu, on a à ce moment seulement l'observation depuis notre point)
+
+**- Projection des observations sur la carte globale** :
+
+Pour chaque objet observé (distance dkdk​, angle θk​, label Lk​) autour du point mobile :
+
+    Calcul des coordonnées relatives :
+    À partir de l'observation locale, calculez les coordonnées de l'objet autour du point mobile supposé (xt,yt)(xt​,yt​) :
+    xk′=xt+dk⋅cos⁡(θk)
+    xk′​=xt​+dk​⋅cos(θk​)
+    yk′=yt+dk⋅sin⁡(θk)
+    yk′​=yt​+dk​⋅sin(θk​)
+
+    où (xk′,yk′)(xk′​,yk′​) sont les coordonnées estimées de l'objet dans la carte globale.
+
+    Filtrage des objets candidats :
+    Parcourez la carte globale et sélectionnez les objets dont le label correspond à LkLk​ (par exemple "bâtiment") et dont la distance par rapport à (xk′,yk′)(xk′​,yk′​) est minimale
+ 
+**- Évaluation du score** : Le score mesure l'erreur entre les observations (distance et angle) et les positions réelles des objets sur la carte.
+
+**- Optimisation** : Sélection de la position qui minimise l'erreur globale
 
 AJOUTER EXPLICATION sur la façon dont on calcul la position 
 
