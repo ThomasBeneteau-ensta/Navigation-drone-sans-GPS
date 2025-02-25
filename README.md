@@ -133,9 +133,66 @@ Filtrage des objets candidats :
 
 ## Outils nécessaires : OSMnx, shapely
 
+Pour réaliser ce projet on a donc besoin de trouver un moyen de stocker les informations d'une carte symbolique et des objets présents sur la carte. (Bâtiment, route, etc)
 
-Partie mise en place de tout ça, 
+Les cartes vectorielles m'ont semblées être le meilleurs moyen d'avoir toutes ces informations à disposition pour avoir à la fois une certaine facilité à manipulé les coordonées, calculs de distance et angle et de pouvoir les visualiser relativement facilement. 
 
+C'est là qu'intervient OSMnx, c'est une bibliothèque Python permettant de télécharger, manipuler et analyser les données géospatiales issues d'OpenStreetMap (OSM). C'est particulièrement utile pour :
+
+- Récupérer des réseaux routiers, bâtiments et infrastructures sous forme de graphiques ou de GeoDataFrames.
+- Générer et manipuler des cartes vectorielles.
+- Effectuer des calculs géographiques tels que la distance entre objets, le routage, ou encore l'analyse des environnements urbains.
+
+La fonction ci-dessus permet de télécharger une carte vectorielle avec les objets souhaités, autour d'un point de coordonnée donné (lat, lon), dans un carrée de coté (dist): 
+
+'''python
+def gen_vect_map(lat, lon, dist):
+    """
+    Génère les données vectorielles OSM pour une zone autour d'un point central.
+
+    Args:
+        lat (float): Latitude du centre.
+        lon (float): Longitude du centre.
+        dist (int): Distance en mètres entre le centre et les bords de la zone.
+
+    Returns:
+        gdf (GeoDataFrame): Données vectorielles OSM avec types d'objets.
+        bbox (tuple): Limites (north, south, east, west) de la zone.
+    """
+
+    # Définir un point central (lat, lon) et une zone de 2*dist x 2*dist autour du point
+    center_lat, center_lon = lat, lon
+    distance = dist  # distance entre le point central et les côtés (donc bord_map = 2 * dist)
+
+    north, south, east, west = ox.utils_geo.bbox_from_point((center_lat, center_lon), dist=distance)
+
+    # Définir les tags pour récupérer plusieurs types d'éléments
+    tags = {
+        'building': True,  # Tous les bâtiments
+        'highway': True,  # Toutes les routes et chemins
+        #'waterway': True,  # Toutes les rivières et canaux
+        #'natural': ['water', 'wood'],  # Éléments naturels (eau)
+        #'landuse': 'forest',  # Zones de forêt
+        #'amenity': ['school', 'hospital', 'restaurant'],  # Écoles, hôpitaux et restaurants
+        #'leisure': 'park',  # Parcs de loisirs
+        #'tourism': 'hotel',  # Hôtels
+        #'railway': 'station'  # Stations ferroviaires
+    }
+
+    # Télécharger les données dans cette zone
+    gdf = ox.geometries_from_bbox(north, south, east, west, tags)
+
+    # Ajouter une colonne indiquant le type d'objet
+    def get_object_type(row):
+        for tag in ['building', 'highway', 'waterway']:
+            if tag in row and not pd.isna(row[tag]):
+                return tag
+        return "unknown"
+
+    gdf['object_type'] = gdf.apply(get_object_type, axis=1)
+
+    return gdf, (north, south, east, west)
+'''
 générer une carte vectorielle (depuis Openstreetmap) 
 Créer une carte vectorielle avec shapely
 
