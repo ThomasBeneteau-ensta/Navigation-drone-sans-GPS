@@ -114,16 +114,14 @@ Ce que l'on veut réaliser avec cet algorithme :
 
 **- Projection des observations sur la carte globale** :
 
-Pour chaque objet observé (distance dkdk​, angle θk​, label Lk​) autour du point mobile :
+Pour chaque objet observé (distance dk​, angle θk​, label Lk​) autour du point mobile :
 
-    Calcul des coordonnées relatives :
+** Calcul des coordonnées relatives **: 
     À partir de l'observation locale, calculez les coordonnées de l'objet autour du point mobile supposé (xt,yt)(xt​,yt​) :
     xk′=xt+dk⋅cos⁡(θk)
-    xk′​=xt​+dk​⋅cos(θk​)
-    yk′=yt+dk⋅sin⁡(θk)
     yk′​=yt​+dk​⋅sin(θk​)
 
-    où (xk′,yk′)(xk′​,yk′​) sont les coordonnées estimées de l'objet dans la carte globale.
+    où (xk′,yk′) sont les coordonnées estimées de l'objet dans la carte globale.
 
     Filtrage des objets candidats :
     Parcourez la carte globale et sélectionnez les objets dont le label correspond à LkLk​ (par exemple "bâtiment") et dont la distance par rapport à (xk′,yk′)(xk′​,yk′​) est minimale
