@@ -194,6 +194,14 @@ def gen_vect_map(lat, lon, dist):
     return gdf, (north, south, east, west)
 ```
 
+Avec la fonction "plot_vect_map" on obtient alors l'affichage suivant : 
+
+![image](https://github.com/user-attachments/assets/7e3e1b06-dae0-4e58-8b0b-c02b5c638217)
+![image](https://github.com/user-attachments/assets/365ac0b9-ae4c-49fd-b490-1ada037b760c)
+![image](https://github.com/user-attachments/assets/68400103-85ec-4bf0-89ef-f7be6eacbc7f)
+
+
+
 générer une carte vectorielle (depuis Openstreetmap) 
 Créer une carte vectorielle avec shapely
 
