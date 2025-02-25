@@ -116,21 +116,23 @@ Ce que l'on veut réaliser avec cet algorithme :
 
 Pour chaque objet observé (distance dk​, angle θk​, label Lk​) autour du point mobile :
 
-** Calcul des coordonnées relatives **: 
+Calcul des coordonnées relatives : 
     À partir de l'observation locale, calculez les coordonnées de l'objet autour du point mobile supposé (xt,yt)(xt​,yt​) :
     xk′=xt+dk⋅cos⁡(θk)
     yk′​=yt​+dk​⋅sin(θk​)
 
     où (xk′,yk′) sont les coordonnées estimées de l'objet dans la carte globale.
 
-    Filtrage des objets candidats :
-    Parcourez la carte globale et sélectionnez les objets dont le label correspond à LkLk​ (par exemple "bâtiment") et dont la distance par rapport à (xk′,yk′)(xk′​,yk′​) est minimale
+Filtrage des objets candidats :
+    En parcourant le tableaux des objets de la carte globale on sélectionne les objets dont le label correspond      à Lk​ (par exemple "bâtiment") et dont la distance par rapport à (xk′,yk′)est minimale
  
-**- Évaluation du score** : Le score mesure l'erreur entre les observations (distance et angle) et les positions réelles des objets sur la carte.
+**- Évaluation du score** : Le score mesure l'erreur entre les observations (distance et angle) et les positions réelles des objets sur la carte. Ici on pourra imaginer plusieurs façon de calculer le score. Par exemple on peut pondérer le score en fonction de la distance. i.e. plus l'objet est loin moins il affecte l'erreur affecte le score. A voir.
 
-**- Optimisation** : Sélection de la position qui minimise l'erreur globale
+**- Optimisation** : Sélection de la position qui minimise l'erreur globale. On estime donc que c'est notre position actuelle. On peut alors décider en conséquence des actions à faire pour aller vers notre destination.
 
-AJOUTER EXPLICATION sur la façon dont on calcul la position 
+
+## Outils nécessaires : OSMnx, shapely
+
 
 Partie mise en place de tout ça, 
 
