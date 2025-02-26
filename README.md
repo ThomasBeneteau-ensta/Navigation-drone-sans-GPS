@@ -322,11 +322,3 @@ ax.set_ylabel("")
 # Afficher la carte
 plt.show()
 ```
-
-
-générer une carte vectorielle (depuis Openstreetmap) 
-Créer une carte vectorielle avec shapely
-
-calcul de distance et angles aux objets et modification du geodataframe
-
-partie estimation de position avec filtre de kalman
