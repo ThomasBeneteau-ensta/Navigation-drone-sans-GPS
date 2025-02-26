@@ -324,5 +324,19 @@ ax.set_ylabel("")
 plt.show()
 ```
 
+## 🔗 Liens utiles
+
+- 🎓 [Ensta Bretagne](https://www.ensta-bretagne.fr/fr)
+- 🖇️ [Github Binôme](https://github.com/RD-ENSTA/Navigation-drone-sans-GPS)
+- 📑 [Documentation OSMnx](https://osmnx.readthedocs.io/en/stable/)
+- 📑 [Documentation Shapely](https://shapely.readthedocs.io/en/2.0.4/manual.html)
+
+
+## 📜 Licence
+
+Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
+
+---
+
 <img src="https://github.com/user-attachments/assets/71819bbd-0f8c-4482-8f9a-c2acab31f270" width="50%" height="50%">
 
