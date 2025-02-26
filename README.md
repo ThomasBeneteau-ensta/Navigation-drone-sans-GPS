@@ -324,6 +324,8 @@ ax.set_ylabel("")
 plt.show()
 ```
 
+<img src="https://github.com/user-attachments/assets/71819bbd-0f8c-4482-8f9a-c2acab31f270" width="50%" height="50%">
+
 ## 🔗 Liens utiles
 
 - 🎓 [Ensta Bretagne](https://www.ensta-bretagne.fr/fr)
@@ -337,6 +339,3 @@ plt.show()
 Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
 
 ---
-
-<img src="https://github.com/user-attachments/assets/71819bbd-0f8c-4482-8f9a-c2acab31f270" width="50%" height="50%">
-
