@@ -1,8 +1,7 @@
 ## 🧭 NAVigation par Reconnaissance de l'Environnement et Cartographie (NAVREC)
 
-<p align="left">
-  <img src="https://github.com/user-attachments/assets/ac08ac7e-f5ce-44bd-9b43-7882292135c2" alt="Description de l'image">
-</p>
+
+![Ensta-logotype-IP-Paris-RVB-Horizontal-Bleu](https://github.com/user-attachments/assets/3783ee5e-a382-43fc-86ac-b3f2c6216c01)
 
 > projet de 3ème année : Systèmes embarquées [ENSTA Bretagne](https://www.ensta-bretagne.fr/fr)
 
