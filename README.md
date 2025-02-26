@@ -199,7 +199,57 @@ Avec la fonction "plot_vect_map" on obtient alors l'affichage suivant :
 ![image](https://github.com/user-attachments/assets/7e3e1b06-dae0-4e58-8b0b-c02b5c638217)
 ![image](https://github.com/user-attachments/assets/93ba71f2-cd03-46f8-9c68-d4ad3efff411)
 
+Afin de pouvoir ensuite faire le calcul pour faire le map matching on doit calculer la distance et l'angle relatif à notre point mobile. On réalise cette étape avec le code ci-dessous.
+(Afin de conserver ces données on les enregistre dans le geodataframe de la carte.)
 
+```python
+def calculate_distances_and_angles(gdf, bbox):
+    """
+    Calcule les distances et angles relatifs des objets par rapport au centroïde global de la carte.
+
+    Args:
+        gdf (GeoDataFrame): Objets géographiques.
+
+    Returns:
+        GeoDataFrame: Objets avec distances et angles relatifs ajoutés.
+        tuple: (lat, lon) du centre calculé.
+        DataFrame: Tableau des labels, distances et angles pour chaque objet.
+    """
+    # Calculer la position centrale de la carte
+    north, south, east, west = bbox  # Récupérer les limites
+    center_lat = (north + south) / 2
+    center_lon = (east + west) / 2
+
+    # Initialiser un géodésique pour les calculs
+    geod = Geod(ellps="WGS84")
+
+    # Calculer la distance et l'angle
+    def compute_distance_and_angle(row):
+        obj_x, obj_y = row.geometry.centroid.xy
+        obj_lon, obj_lat = obj_x[0], obj_y[0]
+
+        # Distance en mètres
+        _, _, distance = geod.inv(center_lon, center_lat, obj_lon, obj_lat)
+
+        # Angle relatif
+        dx = obj_lon - center_lon
+        dy = obj_lat - center_lat
+        angle = degrees(atan2(dy, dx)) % 360  # Angle en [0, 360]
+
+        return pd.Series({'distance_m': distance, 'angle_deg': angle})
+
+    # Appliquer les calculs
+    gdf[['distance_m', 'angle_deg']] = gdf.apply(compute_distance_and_angle, axis=1)
+
+    # Créer un tableau avec les labels, distances et angles
+    table = gdf[['object_type', 'distance_m', 'angle_deg']].reset_index(drop=True)
+
+    return gdf, (center_lat, center_lon), table
+```
+
+On obtient alors le résultat suivant à la visualisation : 
+(ici on part du principe que notre drone est au centre de l'observation, on place donc un point au centre de notre bbox et on calcul les distances et les angles relatif à ce point)
+![image](https://github.com/user-attachments/assets/b9330c79-4d7c-44bb-9ac8-75af48f045fb)
 
 
 
