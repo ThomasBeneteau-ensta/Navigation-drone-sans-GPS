@@ -251,6 +251,7 @@ On obtient alors le résultat suivant à la visualisation :
 (ici on part du principe que notre drone est au centre de l'observation, on place donc un point au centre de notre bbox et on calcul les distances et les angles relatif à ce point)
 ![image](https://github.com/user-attachments/assets/b9330c79-4d7c-44bb-9ac8-75af48f045fb)
 
+Pour pouvoir réaliser le map matching on doit aussi réaliser cette étape sur la carte connue à partir du point estimé. (Dans un premier temps on utilise le même point que notre point d'observation)
 
 
 générer une carte vectorielle (depuis Openstreetmap) 
