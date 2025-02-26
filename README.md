@@ -1,6 +1,10 @@
+## 🧭 NAVigation par Reconnaissance de l'Environnement et Cartographie (NAVREC)
 ![Ensta-logotype-IP-Paris-RVB-Horizontal-Bleu](https://github.com/user-attachments/assets/3783ee5e-a382-43fc-86ac-b3f2c6216c01)
 
-## 🧭 NAVigation par Reconnaissance de l'Environnement et Cartographie (NAVREC)
+
+<img src="https://github.com/user-attachments/assets/3783ee5e-a382-43fc-86ac-b3f2c6216c01" width="50%" height="50%">
+
+
 
 > projet de 3ème année : Systèmes embarquées [ENSTA Bretagne](https://www.ensta-bretagne.fr/fr)
 
@@ -19,6 +23,8 @@ Il utilise :
 - 🔹 **Langage principal** : `Python`
 - 🔹 **Framework utilisé** : `OSMnx`
 - 🔹 **Base de données** : `BD ORTHO®`
+
+## 📆 Organisation du projet
 
 
 ## 🎨 Fonctionnalités principales
