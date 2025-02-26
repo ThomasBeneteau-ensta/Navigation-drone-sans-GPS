@@ -324,5 +324,5 @@ ax.set_ylabel("")
 plt.show()
 ```
 
-![image](https://github.com/user-attachments/assets/71819bbd-0f8c-4482-8f9a-c2acab31f270)
+<img src="https://github.com/user-attachments/assets/71819bbd-0f8c-4482-8f9a-c2acab31f270" width="50%" height="50%">
 
