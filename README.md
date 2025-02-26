@@ -197,6 +197,7 @@ def gen_vect_map(lat, lon, dist):
 Avec la fonction "plot_vect_map" on obtient alors l'affichage suivant : 
 
 ![image](https://github.com/user-attachments/assets/7e3e1b06-dae0-4e58-8b0b-c02b5c638217)
+![image](https://github.com/user-attachments/assets/93ba71f2-cd03-46f8-9c68-d4ad3efff411)
 
 
 
