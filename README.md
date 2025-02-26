@@ -20,7 +20,9 @@ Il utilise :
 - 🔹 **Base de données** : `BD ORTHO®`
 
 ## 📆 Organisation du projet
+Les tâches ont été divisés de tel manière que Robin c'est occupé de la partie simulateur de drone, images satellites et traitement d'image, alors que Thomas c'est occupé de la partie carte vectorielle, OpenStreetMap et algorithme de comparaison objets détectés / carte vectorielle connue.
 
+<img src="https://mermaid.ink/img/pako:eNptVEtu2zAQvcqAi7oF5ECW9bN2RY1k5SSIiwItvKHFic2WIlWKcu0GOUCPEvQYvlhHlqUqHxoyKHHee_PjPLDcCGQZ23Dt3EoDLcEdXhpbcAfwldZ4sRjP5-2Zk04htOvGEkhW3Emj4daa7-jgmu_kpv1ScV3B1e2yBeI-V7XAqtn_QvyBWlTtSftfYX5CfeE51zmez7o3EAjX5vhXQQacDHfoQW6l82A38SDwg3A8CcbB1IOJL1b6OeWdWcvzJ4v5Fi09IAu-IV7yHpWSjrb_mXnH6c9azki08IJypbqIhTUah6iAnnuH9ow_YwTuUJmyxAK1A1M7qUCMcF8qI92ZidRf-0PZlNodnza2tRooTXsl0px2SgtZIfAaSmtKiyBqaGo7xIVv5KpBkg52Mjcl6qWziG7By1fp5lEvHQ4S4ywnn08RitEplKFs3GOigagwed0gXkWX9ObxwLy0x6fqLfO0N0_eLP_nrSn4uZ_mzzRzbh1CdSjWRsmf9dDn9YsW6Mt513eQGJ2KWcH7m-VC7z1YbnmJ6vBhSNP3xHrYE58oltaFd1DQHSpr1XUCXKGZc8cvLS9wQNSXvKEMO6LjHwqlQakRxQJjwMpR-juu0lTyRbrWYU80DOuj2hgq8LZAckkcn4Y9OwD31V-HZ3D7O-UWuVCSrsSl1LwfEu3KoJCKfKMb44FocxuN_el44nvQ0TCPFUhjRwqaRw8N6Yq5LfmwYhltBd7zWrkVW-lHMuW1M8uDzlnmbI0es6bebFl2z1VFb3XZTLG55NTWRWdScv3NmKI3oneWPbA9y5LwIvVnYZIm0SyJozjw2IFlk3R64QczPwqSaThNokeP_T7h_YtZOgniII7SeBIHaRp6DIV0xi7aaXoaqo__ABPOsUY?type=png">
 
 ## 🎨 Fonctionnalités principales
 
