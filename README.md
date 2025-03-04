@@ -20,7 +20,7 @@ Il utilise :
 - 🔹 **Base de données** : `BD ORTHO®`
 
 ## 📆 Organisation du projet
-Les tâches ont été divisés de tel manière que Robin c'est occupé de la partie simulateur de drone, images satellites et traitement d'image, alors que Thomas c'est occupé de la partie carte vectorielle, OpenStreetMap et algorithme de comparaison objets détectés / carte vectorielle connue.
+Les tâches ont été divisés de tel manière que Robin s'est occupé de la partie simulateur de drone, images satellites et traitement d'image, alors que Thomas c'est occupé de la partie carte vectorielle, OpenStreetMap et algorithme de comparaison objets détectés / carte vectorielle connue.
 
 Le Github concernant la partie simulateur de drone et traitement d'iamge est accessible ici : [Github Binôme (Partie Simulation & Reconnaissance d'image)](https://github.com/RD-ENSTA/Navigation-drone-sans-GPS)
 
