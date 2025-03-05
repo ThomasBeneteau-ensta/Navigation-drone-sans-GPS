@@ -122,8 +122,8 @@ Pour chaque objet observé (distance dk​, angle θk​, label Lk​) autour du
 Calcul des coordonnées relatives : 
 À partir de l'observation locale, calculez les coordonnées de l'objet autour du point mobile supposé (xt,yt) :
 </p>
-$xk'= xt + dk⋅cos⁡(θk)$ </p>
-$yk'= yt ​+ dk​⋅sin(θk​)$
+$`xk'= xt + dk⋅cos⁡(θk)`$ </p>
+$`yk'= yt ​+ dk​⋅sin(θk​)`$ </p>
 
 où (xk', yk') sont les coordonnées estimées de l'objet dans la carte globale.
 
